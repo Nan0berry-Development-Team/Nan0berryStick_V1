@@ -4,25 +4,26 @@ A Bad USB That Runs With RP2040
 <img width="2448" height="3264" alt="17869025881864917216757544381301" src="https://github.com/user-attachments/assets/15bb745d-8575-4c19-abc9-6cb3d3a41e9b" />
 Currently In Active Development
 ___
-   By Nan0berry Development Team
+__  By Nan0berry Development Team
 ___
 ___
-   Released In 16/August/2026
+__  Released In 16/August/2026
 ___
-   System: PicoDucky
+__  System: PicoDucky
 ___
 ___
-   RP2040
-___
-___ 
-   Active Development
+__  RP2040
 ___
 ___ 
-   4 Years Minimal Support
+__ Active Development
+___
+___ 
+__  4 Years Minimal Support
 ___
 ___
-    Released First In Brazil
+__  Released First In Brazil
 ___
 ___
-    Version V1
+__ Version V1
+___
 ___
