@@ -6,17 +6,23 @@ Currently In Active Development
 ___
    By Nan0berry Development Team
 ___
+___
    Released In 16/August/2026
 ___
    System: PicoDucky
 ___
+___
    RP2040
+___
 ___ 
-   Active Dwvelopment
+   Active Development
+___
 ___ 
    4 Years Minimal Support
 ___
+___
     Released First In Brazil
+___
 ___
     Version V1
 ___
