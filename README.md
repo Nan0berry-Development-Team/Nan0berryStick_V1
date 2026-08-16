@@ -1,32 +1,32 @@
+# Nan0berryStick V1
 
-# Nan0berryStick_V1
-#A Bad USB That Runs With RP2040
+> A BadUSB device powered by the RP2040 microcontroller.
 
-#🟢ACTIVE
+![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen)
+![System](https://img.shields.io/badge/System-PicoDucky-blue)
+![Microcontroller](https://img.shields.io/badge/MCU-RP2040-orange)
+![Version](https://img.shields.io/badge/Version-V1.0-informational)
 
-___
-___
-__  #By Nan0berry Development Team
-___
-___
-__  #Released In 16/August/2026
-___
-___
-__  #System: PicoDucky
-___
-___
-__  #RP2040
-___
-___ 
-__  #Active Development
-___
-___ 
-__  #4 Years Minimal Support
-___
-___
-__  #Released First In Brazil
-___
-___
-__  #Version V1
-___
-___
+---
+
+## 📋 Overview
+
+**Nan0berryStick V1** is a high-performance BadUSB device running on the versatile **RP2040** microcontroller using the **PicoDucky** system. Designed and initially released in Brazil, this project is under active development with a commitment to long-term maintenance and updates.
+
+---
+
+## 🚀 Specifications & Features
+
+* **Microcontroller:** RP2040
+* **Firmware/System:** PicoDucky
+* **Development Status:** Active Development
+* **Support Lifecycle:** Minimum of 4 Years of dedicated support
+* **Release Date:** August 16, 2026
+* **Origin:** Developed and released in Brazil
+* **Version:** V1
+
+---
+
+## 🛠️ Development Team
+
+Developed by the **Nan0berry Development Team**.
