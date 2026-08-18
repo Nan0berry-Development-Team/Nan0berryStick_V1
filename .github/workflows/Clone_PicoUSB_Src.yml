@@ -6,6 +6,11 @@ on:
 jobs:
   copy-folder:
     runs-on: ubuntu-latest
+    
+    # Adicione estas permissões para permitir o push no repositório
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout do seu repositório
         uses: actions/checkout@v4
@@ -21,7 +26,7 @@ jobs:
           # Define qual pasta você quer baixar
           echo "src/" >> .git/info/sparse-checkout
           
-          # Baixa apenas o histórico recente (mais rápido) da branch main
+          # Baixa apenas o histórico recente da branch main
           git pull origin main --depth=1
           
           # Retorna para a raiz e move a pasta src para o destino desejado
