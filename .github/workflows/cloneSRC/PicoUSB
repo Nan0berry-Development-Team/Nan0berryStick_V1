@@ -1,0 +1,34 @@
+name: Clonar Pasta do GitHub
+
+on:
+  workflow_dispatch: # Permite rodar manualmente na aba "Actions" do GitHub
+
+jobs:
+  copy-folder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do seu repositório
+        uses: actions/checkout@v4
+
+      - name: Baixar pasta específica via SVN
+        run: |
+          # Instala o Subversion (necessário para baixar apenas uma subpasta)
+          sudo apt-get update && sudo apt-get install -y subversion
+          
+          # Faz o checkout apenas da pasta src do repositório de destino
+          svn checkout https://github.com/TomBrlek/PicoUSB/trunk/src temp_src
+          
+          # Move os arquivos para o local desejado no seu repositório (ex: pasta 'pico-usb-src')
+          mkdir -p pico-usb-src
+          cp -r temp_src/* pico-usb-src/
+          
+          # Remove a pasta temporária do SVN
+          rm -rf temp_src
+
+      - name: Commit e Push das alterações
+        run: |
+          git config --global user.name "github-actions[bot]l"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add pico-usb-src/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Atualiza arquivos da pasta src do PicoUSB" && git push)
