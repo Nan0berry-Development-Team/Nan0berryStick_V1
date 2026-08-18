@@ -1,7 +1,7 @@
 name: Clonar Pasta do GitHub
 
 on:
-  workflow_dispatch: # Permite rodar manualmente na aba "Actions" do GitHub
+  workflow_dispatch:
 
 jobs:
   copy-folder:
@@ -10,24 +10,31 @@ jobs:
       - name: Checkout do seu repositório
         uses: actions/checkout@v4
 
-      - name: Baixar pasta específica via SVN
+      - name: Baixar apenas a pasta src do PicoUSB
         run: |
-          # Instala o Subversion (necessário para baixar apenas uma subpasta)
-          sudo apt-get update && sudo apt-get install -y subversion
+          # Inicializa um repositório temporário e configura o sparse-checkout
+          mkdir temp_repo && cd temp_repo
+          git init
+          git remote add origin https://github.com/TomBrlek/PicoUSB.git
+          git config core.sparseCheckout true
           
-          # Faz o checkout apenas da pasta src do repositório de destino
-          svn checkout https://github.com/TomBrlek/PicoUSB/trunk/src temp_src
+          # Define qual pasta você quer baixar
+          echo "src/" >> .git/info/sparse-checkout
           
-          # Move os arquivos para o local desejado no seu repositório (ex: pasta 'pico-usb-src')
+          # Baixa apenas o histórico recente (mais rápido) da branch main
+          git pull origin main --depth=1
+          
+          # Retorna para a raiz e move a pasta src para o destino desejado
+          cd ..
           mkdir -p pico-usb-src
-          cp -r temp_src/* pico-usb-src/
+          cp -r temp_repo/src/* pico-usb-src/
           
-          # Remove a pasta temporária do SVN
-          rm -rf temp_src
+          # Remove a pasta temporária
+          rm -rf temp_repo
 
       - name: Commit e Push das alterações
         run: |
-          git config --global user.name "github-actions[bot]l"
+          git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           git add pico-usb-src/
